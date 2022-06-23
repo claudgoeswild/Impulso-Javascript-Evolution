@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="device-width, initial-scale=1.0">
+        <title>flex shrink studies</title>
+        <style>
+            .flex-container{
+                display: flex;
+                border: 1px solid black;
+                max-width: 350px;
+                margin-bottom: 10px;
+            }
+            .item{
+                background-color: aquamarine;
+                font-size: 24px;
+                text-align: center;
+                margin: 5px;
+            }
+            .fs1{
+                flex-shrink: 1;
+            }
+            .fs0{
+                flex-shrink: 0;
+                flex-basis: 100px;
+            }
+            .fs2{
+                flex-shrink: 2;
+                flex-basis: 100px;
+            }
+            .fs3{
+                flex-shrink: 3;
+            }
+            .fg1{
+                flex-grow: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <p>shrink 1</p>
+        <div class="flex-container">
+            <div class="item fs1 fg1">A</div>
+            <div class="item fs1 fg1">B</div>
+            <div class="item fs1 fg1">cccc ccccc ccc ccccc ccccccc</div>
+            <div class="item fs1 fg1">D</div>
+        </div>
+        <p>shrink 0 basis 100px</p>
+        <div class="flex-container">
+            <div class="item fs0 fg1">A</div>
+            <div class="item fs0 fg1">B</div>
+            <div class="item fs0 fg1">cccc ccccc ccc ccccc ccccccc</div>
+            <div class="item fs0 fg1">D</div>
+        </div>
+        <p>flex-shrink: varied / basis: 100px</p>
+        <div class="flex-container">
+            <div class="item fs0 fg1">A</div>
+            <div class="item fs2 fg1">The generated</div>
+            <div class="item fs1 fg1">C</div>
+            <div class="item fs3 fg1">D</div>
+       </div>
+    
+    </body>
+</html>

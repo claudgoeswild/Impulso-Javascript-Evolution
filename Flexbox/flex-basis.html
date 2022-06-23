@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="device-width, initial-scale=1.0">
+        <title>flex basis studies</title>
+        <style>
+            .flex-container{
+                max-width: 500px;
+                border: 1px solid black;
+                display: flex;
+            }
+            .item{
+                margin: 5px;
+                background-color: chocolate;
+                text-align: center;
+                color: white;
+            }
+            .bauto{
+                flex-basis: auto;
+            }
+            .fg-1{
+                flex-grow: 1;
+            }
+            .fg-2{
+                flex-grow: 2;
+            }
+            .b-0{
+                flex-basis: 0;
+            }
+            .w100{
+                flex-basis: 100px;
+            }
+        </style>
+    </head>     
+    <body>
+        <p>auto</p>
+        <div class="flex-container">
+            <div class="item bauto fg-1">A</div>
+            <div class="item">BBB</div>
+            <div class="item">C</div>
+            <div class="item bauto fg-2">DD</div>
+        </div>
+        <p>zero</p>
+        <div class="flex-container">
+            <div class="item b-0 fg-1">AAAAA</div>
+            <div class="item b-0 fg-1">BBB</div>
+            <div class="item b-0 fg-1">C</div>
+            <div class="item b-0 fg-1">DD</div>
+        </div>
+        <p>basis+width</p>
+        <div class="flex-container">
+            <div class="item w100 fg-2">AAAAA</div>
+            <div class="item w100 fg-2">BBB</div>
+            <div class="item w100 fg-2">C</div>
+            <div class="item w100 fg-2">DD</div>
+        </div>
+    </body>
+</html>
